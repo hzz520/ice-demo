@@ -1,0 +1,32 @@
+{
+  "plugins": [
+    [
+      "build-plugin-fusion",
+      {
+        "themePackage": "@alifd/theme-design-pro"
+      }
+    ],
+    [
+      "build-plugin-moment-locales",
+      {
+        "locales": [
+          "zh-cn"
+        ]
+      }
+    ],
+    "@ali/build-plugin-ice-def"
+  ],
+  "proxy": {
+    "/api": {
+      "changeOrigin": true,
+      "enable": true,
+      "secure": false,
+      "target": "https://os.alipayobjects.com",
+      "https": true,
+      "http2": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+}
